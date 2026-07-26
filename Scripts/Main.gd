@@ -3,7 +3,6 @@ extends Node2D
 var score = 0
 var time_left = 30
 var high_score = 0
-var lives = 3
 
 @onready var high_score_label = $HighScoreLabel
 @onready var restart_button = $RestartButton
@@ -11,14 +10,12 @@ var lives = 3
 @onready var timer_label = $TimerLabel
 @onready var ball = $Ball
 @onready var game_timer = $GameTimer
-@onready var lives_label = $LivesLabel
 
 func _ready():
 	ball.ball_clicked.connect(_on_ball_clicked)
-	update_lives()
 	load_high_score()
 
-func _process(delta):
+func _process(_delta):
 	if game_timer.time_left > 0:
 		timer_label.text = "Time: " + str(ceil(game_timer.time_left))
 
@@ -56,6 +53,3 @@ func save_high_score():
 	var file = FileAccess.open("user://highscore.save", FileAccess.WRITE)
 	file.store_32(high_score)
 	file.close()
-
-func update_lives():
-	lives_label.text = "Lives: " + "❤️".repeat(lives)
