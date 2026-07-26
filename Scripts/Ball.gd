@@ -6,6 +6,7 @@ var speed = Vector2(250, 250)
 var game_over = false
 
 @onready var sprite = $Sprite2D
+@onready var pop_sound = $PopSound
 
 func _ready():
 	randomize()
@@ -43,6 +44,7 @@ func _input_event(_viewport, event, _shape_idx):
 		return
 
 	if event is InputEventMouseButton and event.pressed:
+		pop_sound.play()
 		ball_clicked.emit()
 
 		var screen_size = get_viewport_rect().size
