@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://b6e5usfmllghd"]
+
+[ext_resource type="Script" uid="uid://426w0lyeo0re" path="res://Scenes/Main.gd" id="1_idj7w"]
+[ext_resource type="PackedScene" uid="uid://cnsyot2drcmhw" path="res://Scenes/Ball.tscn" id="1_r150o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_idj7w"]
+font_size = 19
+
+[sub_resource type="LabelSettings" id="LabelSettings_kln2b"]
+font_size = 19
+
+[node name="Main" type="Node2D" unique_id=951991347]
+script = ExtResource("1_idj7w")
+
+[node name="Ball" parent="." unique_id=241866107 instance=ExtResource("1_r150o")]
+position = Vector2(400, 300)
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=263713063]
+offset_left = 7.0
+offset_top = 26.0
+offset_right = 182.0
+offset_bottom = 80.0
+text = "Your Score: 0"
+label_settings = SubResource("LabelSettings_idj7w")
+
+[node name="GameTimer" type="Timer" parent="." unique_id=1054748173]
+wait_time = 30.0
+one_shot = true
+autostart = true
+
+[node name="TimerLabel" type="Label" parent="." unique_id=259311443]
+offset_left = 7.0
+offset_right = 72.0
+offset_bottom = 23.0
+text = "Time: 30"
+label_settings = SubResource("LabelSettings_kln2b")
+
+[node name="RestartButton" type="Button" parent="." unique_id=290253272]
+visible = false
+offset_left = 11.0
+offset_top = 57.0
+offset_right = 110.0
+offset_bottom = 93.0
+text = "Play Again?"
+
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]

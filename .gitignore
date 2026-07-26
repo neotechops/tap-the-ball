@@ -1,0 +1,15 @@
+# Godot 4+ specific ignores
+/android/
+
+# Godot cache
+.godot/
+
+# Imported files
+.import/
+
+# Mono (not needed unless using C#)
+.mono/
+
+# OS files
+Thumbs.db
+.DS_Store
