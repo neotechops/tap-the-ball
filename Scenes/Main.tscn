@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b6e5usfmllghd"]
 
-[ext_resource type="Script" uid="uid://426w0lyeo0re" path="res://Scenes/Main.gd" id="1_idj7w"]
+[ext_resource type="Script" uid="uid://426w0lyeo0re" path="res://Scripts/Main.gd" id="1_idj7w"]
 [ext_resource type="PackedScene" uid="uid://cnsyot2drcmhw" path="res://Scenes/Ball.tscn" id="1_r150o"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_idj7w"]
