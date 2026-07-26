@@ -16,11 +16,19 @@ script = ExtResource("1_idj7w")
 position = Vector2(400, 300)
 
 [node name="ScoreLabel" type="Label" parent="." unique_id=263713063]
-offset_left = 7.0
-offset_top = 26.0
-offset_right = 182.0
-offset_bottom = 80.0
+offset_left = 8.0
+offset_top = 49.0
+offset_right = 183.0
+offset_bottom = 103.0
 text = "Your Score: 0"
+label_settings = SubResource("LabelSettings_idj7w")
+
+[node name="HighScoreLabel" type="Label" parent="." unique_id=1237796753]
+offset_left = 7.0
+offset_top = 24.0
+offset_right = 182.0
+offset_bottom = 78.0
+text = "High Score: 0"
 label_settings = SubResource("LabelSettings_idj7w")
 
 [node name="GameTimer" type="Timer" parent="." unique_id=1054748173]
@@ -37,10 +45,16 @@ label_settings = SubResource("LabelSettings_kln2b")
 
 [node name="RestartButton" type="Button" parent="." unique_id=290253272]
 visible = false
-offset_left = 11.0
-offset_top = 57.0
-offset_right = 110.0
-offset_bottom = 93.0
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 530.0
+offset_top = 22.0
+offset_right = 625.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 0
 text = "Play Again?"
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
