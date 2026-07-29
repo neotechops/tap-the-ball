@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://cqm48ib1vs1sx"]
+
+[ext_resource type="Script" uid="uid://66py4f0b8bqo" path="res://Scripts/Settings.gd" id="1_4hxq3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fv8yg"]
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_mjvk5"]
+font_size = 18
+
+[node name="Settings" type="Control" unique_id=1175939362]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4hxq3")
+
+[node name="Background" type="ColorRect" parent="." unique_id=942745119]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7507032, 0.5900103, 0.23302689, 1)
+
+[node name="Title" type="Label" parent="." unique_id=1291807567]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -110.5
+offset_right = 110.5
+offset_bottom = 67.0
+grow_horizontal = 2
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_fv8yg")
+
+[node name="SoundButton" type="Button" parent="." unique_id=1090120705]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 124.0
+offset_right = 639.0
+offset_bottom = 155.0
+text = "🔊 Sound : ON"
+
+[node name="MusicButton" type="Button" parent="." unique_id=1401248342]
+layout_mode = 0
+offset_left = 521.0
+offset_top = 207.0
+offset_right = 638.0
+offset_bottom = 238.0
+text = "🎵 Music : ON"
+
+[node name="VersionLabel" type="Label" parent="." unique_id=1400602403]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 536.0
+offset_top = -247.0
+offset_right = 632.0
+offset_bottom = -221.0
+grow_vertical = 0
+text = "Version 1.0"
+label_settings = SubResource("LabelSettings_mjvk5")
+
+[node name="BackButton" type="Button" parent="." unique_id=743484481]
+layout_mode = 0
+offset_left = 546.0
+offset_top = 302.0
+offset_right = 614.0
+offset_bottom = 333.0
+text = "← BACK"
