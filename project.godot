@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TapTheBall"
-run/main_scene="uid://b6e5usfmllghd"
+run/main_scene="uid://cgeuvi0k6qlte"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

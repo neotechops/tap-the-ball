@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://cgeuvi0k6qlte"]
+
+[ext_resource type="Script" uid="uid://dfsue7k8g3pgx" path="res://Scripts/MainMenu.gd" id="1_tt5f1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bnhvo"]
+font_size = 24
+font_color = Color(0.984716, 0.9849116, 0.995617, 1)
+
+[node name="MainMenu" type="Control" unique_id=592156904]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tt5f1")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1313400154]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.113404654, 0.41814598, 0.35108396, 1)
+
+[node name="GameTitle" type="Label" parent="." unique_id=2095112809]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 58.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 42
+text = "TAP THE BALL"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="." unique_id=589766002]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 118.0
+offset_right = 728.0
+offset_bottom = 152.0
+text = "Catch it before it's gone!"
+label_settings = SubResource("LabelSettings_bnhvo")
+
+[node name="MenuButtons" type="VBoxContainer" parent="." unique_id=1839985007]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -101.5
+offset_right = 63.0
+offset_bottom = 101.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="PlayButton" type="Button" parent="MenuButtons" unique_id=8444898]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "▶ PLAY"
+
+[node name="BestScoreButton" type="Button" parent="MenuButtons" unique_id=102649117]
+layout_mode = 2
+text = "🏆 BEST SCORE"
+
+[node name="SettingsButton" type="Button" parent="MenuButtons" unique_id=798471576]
+layout_mode = 2
+text = "⚙ SETTINGS"
+
+[node name="ExitButton" type="Button" parent="MenuButtons" unique_id=1381844731]
+layout_mode = 2
+text = "🚪 EXIT"
