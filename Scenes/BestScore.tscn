@@ -1,7 +1,12 @@
 [gd_scene format=3 uid="uid://b76smxuhhgoi"]
 
+[ext_resource type="Script" uid="uid://cf43oh0ej5htj" path="res://Scripts/BestScore.gd" id="1_4xwj7"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_1mgxu"]
 font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_mjvk5"]
+font_size = 30
 
 [node name="BestScore" type="Control" unique_id=699966928]
 layout_mode = 3
@@ -10,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_4xwj7")
 
 [node name="Background" type="ColorRect" parent="." unique_id=14603337]
 layout_mode = 1
@@ -31,3 +37,28 @@ offset_bottom = 67.0
 grow_horizontal = 2
 text = "BEST SCORE"
 label_settings = SubResource("LabelSettings_1mgxu")
+
+[node name="HighScoreLabel" type="Label" parent="." unique_id=1419133269]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.0
+offset_top = -21.0
+offset_right = 94.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "High Score: 0"
+label_settings = SubResource("LabelSettings_mjvk5")
+
+[node name="BackButton" type="Button" parent="." unique_id=1366097070]
+layout_mode = 0
+offset_left = 517.0
+offset_top = 472.0
+offset_right = 637.0
+offset_bottom = 522.0
+theme_override_font_sizes/font_size = 30
+text = "← BACK"
