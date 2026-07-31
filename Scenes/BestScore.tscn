@@ -1,12 +1,61 @@
 [gd_scene format=3 uid="uid://b76smxuhhgoi"]
 
 [ext_resource type="Script" uid="uid://cf43oh0ej5htj" path="res://Scripts/BestScore.gd" id="1_4xwj7"]
+[ext_resource type="FontFile" uid="uid://cdsgy0twi7xee" path="res://Assests/Fonts/Montserrat-ExtraBold.ttf" id="2_62as4"]
+[ext_resource type="Texture2D" uid="uid://cquq5ulm52gru" path="res://Assests/Images/main_menu_background.png" id="2_iwgtd"]
+[ext_resource type="Theme" uid="uid://cndttn6whic33" path="res://Assests/Themes/MainMenuTheme.tres" id="2_vokgr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1mgxu"]
-font_size = 48
+font = ExtResource("2_62as4")
+font_size = 40
 
 [sub_resource type="LabelSettings" id="LabelSettings_mjvk5"]
-font_size = 30
+font = ExtResource("2_62as4")
+font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vb1ha"]
+content_margin_left = 20.0
+content_margin_top = 12.0
+content_margin_right = 20.0
+content_margin_bottom = 12.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.83137256, 0.6862745, 0.21568628, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_df05h"]
+bg_color = Color(0.72156864, 0.5254902, 0.043137256, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.84313726, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghw46"]
+content_margin_left = 20.0
+content_margin_top = 12.0
+content_margin_right = 20.0
+content_margin_bottom = 12.0
+bg_color = Color(0.83137256, 0.6862745, 0.21568628, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.84313726, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="BestScore" type="Control" unique_id=699966928]
 layout_mode = 3
@@ -17,26 +66,43 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4xwj7")
 
-[node name="Background" type="ColorRect" parent="." unique_id=14603337]
+[node name="Background" type="TextureRect" parent="." unique_id=1782864269]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.13769042, 0.70755523, 0.7290688, 1)
+texture = ExtResource("2_iwgtd")
+expand_mode = 1
+stretch_mode = 6
 
 [node name="Title" type="Label" parent="." unique_id=349883725]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -138.5
-offset_right = 138.5
-offset_bottom = 67.0
+offset_left = -143.0
+offset_top = 65.0
+offset_right = 134.0
+offset_bottom = 132.0
 grow_horizontal = 2
 text = "BEST SCORE"
 label_settings = SubResource("LabelSettings_1mgxu")
+
+[node name="Trophy" type="Label" parent="." unique_id=1975537495]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -143.0
+offset_top = 194.0
+offset_right = 134.0
+offset_bottom = 261.0
+grow_horizontal = 2
+text = "🏆"
+label_settings = SubResource("LabelSettings_1mgxu")
+horizontal_alignment = 1
 
 [node name="HighScoreLabel" type="Label" parent="." unique_id=1419133269]
 layout_mode = 1
@@ -56,9 +122,16 @@ label_settings = SubResource("LabelSettings_mjvk5")
 
 [node name="BackButton" type="Button" parent="." unique_id=1366097070]
 layout_mode = 0
-offset_left = 517.0
-offset_top = 472.0
-offset_right = 637.0
-offset_bottom = 522.0
-theme_override_font_sizes/font_size = 30
+offset_left = 500.0
+offset_top = 450.0
+offset_right = 634.0
+offset_bottom = 505.0
+theme = ExtResource("2_vokgr")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_62as4")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_vb1ha")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_df05h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ghw46")
 text = "← BACK"
