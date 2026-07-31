@@ -2,11 +2,29 @@
 
 [ext_resource type="Script" uid="uid://dfsue7k8g3pgx" path="res://Scripts/MainMenu.gd" id="1_tt5f1"]
 [ext_resource type="Texture2D" uid="uid://cquq5ulm52gru" path="res://Assests/Images/main_menu_background.png" id="2_853f1"]
-[ext_resource type="Texture2D" uid="uid://c0m382tuet1sn" path="res://Assests/Logo/NeoTechOps_icon.png" id="3_8saeu"]
+[ext_resource type="Theme" uid="uid://cndttn6whic33" path="res://Assests/Themes/MainMenuTheme.tres" id="3_8saeu"]
+[ext_resource type="FontFile" uid="uid://cdsgy0twi7xee" path="res://Assests/Fonts/Montserrat-ExtraBold.ttf" id="3_ghw46"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bnhvo"]
+font = ExtResource("3_ghw46")
 font_size = 24
 font_color = Color(0.984716, 0.9849116, 0.995617, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vb1ha"]
+content_margin_left = 20.0
+content_margin_top = 12.0
+content_margin_right = 20.0
+content_margin_bottom = 12.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.83137256, 0.6862745, 0.21568628, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="MainMenu" type="Control" unique_id=592156904]
 layout_mode = 3
@@ -32,19 +50,22 @@ stretch_mode = 6
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 136.0
-offset_bottom = 194.0
+offset_top = 54.0
+offset_bottom = 112.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 39
+theme_override_fonts/font = ExtResource("3_ghw46")
+theme_override_font_sizes/font_size = 56
 text = "TAP THE BALL"
 horizontal_alignment = 1
 
 [node name="Subtitle" type="Label" parent="." unique_id=589766002]
 layout_mode = 0
 offset_left = 444.0
-offset_top = 216.0
+offset_top = 146.0
 offset_right = 725.0
-offset_bottom = 250.0
+offset_bottom = 180.0
+theme_override_fonts/font = ExtResource("3_ghw46")
+theme_override_font_sizes/font_size = 20
 text = "Catch it before it's gone!"
 label_settings = SubResource("LabelSettings_bnhvo")
 
@@ -56,40 +77,45 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -110.0
-offset_top = -45.0
+offset_top = -78.0
 offset_right = 110.0
-offset_bottom = 158.0
+offset_bottom = 125.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
 [node name="PlayButton" type="Button" parent="MenuButtons" unique_id=8444898]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme = ExtResource("3_8saeu")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_ghw46")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_vb1ha")
 text = "▶ PLAY"
 
 [node name="BestScoreButton" type="Button" parent="MenuButtons" unique_id=102649117]
 layout_mode = 2
+theme = ExtResource("3_8saeu")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_ghw46")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_vb1ha")
 text = "🏆 BEST SCORE"
 
 [node name="SettingsButton" type="Button" parent="MenuButtons" unique_id=798471576]
 layout_mode = 2
+theme = ExtResource("3_8saeu")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_ghw46")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_vb1ha")
 text = "⚙ SETTINGS"
 
 [node name="ExitButton" type="Button" parent="MenuButtons" unique_id=1381844731]
 layout_mode = 2
+theme = ExtResource("3_8saeu")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_ghw46")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_vb1ha")
 text = "🚪 EXIT"
-
-[node name="Logo" type="TextureRect" parent="." unique_id=551520684]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -55.0
-offset_top = 17.0
-offset_right = 55.0
-offset_bottom = 127.0
-grow_horizontal = 2
-texture = ExtResource("3_8saeu")
-expand_mode = 1
-stretch_mode = 5
