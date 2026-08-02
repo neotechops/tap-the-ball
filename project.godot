@@ -11,9 +11,11 @@ config_version=5
 [application]
 
 config/name="TapTheBall"
+config/description="Tap the moving ball and beat your best score before time runs out!"
+config/version="1.0"
 run/main_scene="uid://cgeuvi0k6qlte"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://bmx7kaiweoqjt"
 
 [autoload]
 
