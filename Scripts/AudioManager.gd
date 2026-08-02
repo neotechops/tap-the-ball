@@ -4,6 +4,7 @@ var button_player : AudioStreamPlayer
 var ball_player : AudioStreamPlayer
 var game_over_player : AudioStreamPlayer
 var success_player : AudioStreamPlayer
+var music_player : AudioStreamPlayer
 
 func _ready():
 	button_player = AudioStreamPlayer.new()
@@ -29,6 +30,19 @@ func _ready():
 	add_child(success_player)
 
 	success_player.stream = preload("res://Assests/Audio/SFX/success.mp3")
+	
+	music_player = AudioStreamPlayer.new()
+	music_player.process_mode = Node.PROCESS_MODE_ALWAYS
+	add_child(music_player)
+
+	music_player.stream = preload("res://Assests/Audio/Music/background_music.ogg")
+	music_player.bus = "Master"
+	music_player.volume_db = -12
+	music_player.finished.connect(_on_music_finished)
+
+	if GameSettings.music_enabled and !music_player.playing:
+		music_player.play()
+		
 func play_button_click():
 	if GameSettings.sound_enabled:
 		button_player.play()
@@ -44,3 +58,16 @@ func play_game_over():
 func play_success():
 	if GameSettings.sound_enabled:
 		success_player.play()
+
+func _on_music_finished():
+	if GameSettings.music_enabled:
+		music_player.play()
+
+
+func update_music():
+	if GameSettings.music_enabled:
+		if !music_player.playing:
+			music_player.play()
+	else:
+		if music_player.playing:
+			music_player.stop()

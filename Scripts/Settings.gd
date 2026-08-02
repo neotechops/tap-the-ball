@@ -32,7 +32,8 @@ func _on_sound_pressed():
 func _on_music_pressed():
 	AudioManager.play_button_click()
 	GameSettings.music_enabled = !GameSettings.music_enabled
-
+	AudioManager.update_music()
+	
 	if GameSettings.music_enabled:
 		music_button.text = "🎵 Music : ON"
 	else:

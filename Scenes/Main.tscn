@@ -78,6 +78,7 @@ offset_left = 8.0
 offset_top = 62.0
 offset_right = 183.0
 offset_bottom = 116.0
+theme_override_fonts/font = ExtResource("4_rgh2o")
 text = "Your Score: 0"
 label_settings = SubResource("LabelSettings_idj7w")
 
@@ -86,6 +87,7 @@ offset_left = 8.0
 offset_top = 32.0
 offset_right = 183.0
 offset_bottom = 86.0
+theme_override_fonts/font = ExtResource("4_rgh2o")
 text = "High Score: 0"
 label_settings = SubResource("LabelSettings_idj7w")
 
@@ -98,6 +100,7 @@ autostart = true
 offset_left = 7.0
 offset_right = 72.0
 offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("4_rgh2o")
 text = "Time: 30"
 label_settings = SubResource("LabelSettings_kln2b")
 
@@ -113,6 +116,7 @@ offset_right = 630.0
 offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_rgh2o")
 text = "Play Again?"
 
 [node name="PauseButton" type="Button" parent="." unique_id=1213500474]
@@ -123,6 +127,7 @@ offset_top = 8.0
 offset_right = 1130.0
 offset_bottom = 68.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_rgh2o")
 text = "⏸"
 
 [node name="PausePanel" type="Panel" parent="." unique_id=460393327]
