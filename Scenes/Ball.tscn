@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://cb2i7upja0cw3" path="res://Assests/Images/ball.png" id="1_7nh6h"]
 [ext_resource type="Script" uid="uid://bvl1wus7lj1wy" path="res://Scripts/Ball.gd" id="1_eb1ap"]
-[ext_resource type="AudioStream" uid="uid://xl0sxga6grjt" path="res://Assests/Audio/pop.wav" id="3_27lt3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mjvk5"]
 radius = 103.99
@@ -53,9 +52,6 @@ texture = ExtResource("1_7nh6h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=437002753]
 shape = SubResource("CircleShape2D_mjvk5")
-
-[node name="PopSound" type="AudioStreamPlayer2D" parent="." unique_id=216580454]
-stream = ExtResource("3_27lt3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1116659662]
 libraries/ = SubResource("AnimationLibrary_3dh43")

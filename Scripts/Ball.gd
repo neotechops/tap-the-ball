@@ -6,7 +6,6 @@ var speed = Vector2(250, 250)
 var game_over = false
 
 @onready var sprite = $Sprite2D
-@onready var pop_sound = $PopSound
 @onready var animation_player = $AnimationPlayer
 
 func _ready():
@@ -45,8 +44,8 @@ func _input_event(_viewport, event, _shape_idx):
 		return
 
 	if event is InputEventMouseButton and event.pressed:
-		pop_sound.play()
 		animation_player.play("Pop")
+		AudioManager.play_ball_pop()
 		ball_clicked.emit()
 		move_to_random_position()
 

@@ -159,3 +159,5 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_vb1ha")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_df05h")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ghw46")
 text = "🚪 EXIT"
+
+[connection signal="pressed" from="MenuButtons/ExitButton" to="." method="_on_exit_button_pressed"]

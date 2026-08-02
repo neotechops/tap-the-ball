@@ -1,12 +1,61 @@
 [gd_scene format=3 uid="uid://cqm48ib1vs1sx"]
 
 [ext_resource type="Script" uid="uid://66py4f0b8bqo" path="res://Scripts/Settings.gd" id="1_4hxq3"]
+[ext_resource type="Texture2D" uid="uid://cquq5ulm52gru" path="res://Assests/Images/main_menu_background.png" id="2_flfri"]
+[ext_resource type="FontFile" uid="uid://cdsgy0twi7xee" path="res://Assests/Fonts/Montserrat-ExtraBold.ttf" id="3_yrknh"]
+[ext_resource type="Theme" uid="uid://cndttn6whic33" path="res://Assests/Themes/MainMenuTheme.tres" id="4_w1nw0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fv8yg"]
-font_size = 48
+font = ExtResource("3_yrknh")
+font_size = 40
 
 [sub_resource type="LabelSettings" id="LabelSettings_mjvk5"]
+font = ExtResource("3_yrknh")
 font_size = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vb1ha"]
+content_margin_left = 20.0
+content_margin_top = 12.0
+content_margin_right = 20.0
+content_margin_bottom = 12.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.83137256, 0.6862745, 0.21568628, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_df05h"]
+bg_color = Color(0.72156864, 0.5254902, 0.043137256, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.84313726, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghw46"]
+content_margin_left = 20.0
+content_margin_top = 12.0
+content_margin_right = 20.0
+content_margin_bottom = 12.0
+bg_color = Color(0.83137256, 0.6862745, 0.21568628, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.84313726, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="Settings" type="Control" unique_id=1175939362]
 layout_mode = 3
@@ -17,60 +66,93 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4hxq3")
 
-[node name="Background" type="ColorRect" parent="." unique_id=942745119]
+[node name="Background" type="TextureRect" parent="." unique_id=1000439004]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.7507032, 0.5900103, 0.23302689, 1)
+texture = ExtResource("2_flfri")
+expand_mode = 1
+stretch_mode = 6
 
 [node name="Title" type="Label" parent="." unique_id=1291807567]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -110.5
-offset_right = 110.5
-offset_bottom = 67.0
+offset_left = -110.0
+offset_top = 16.0
+offset_right = 111.0
+offset_bottom = 83.0
 grow_horizontal = 2
 text = "SETTINGS"
 label_settings = SubResource("LabelSettings_fv8yg")
 
-[node name="SoundButton" type="Button" parent="." unique_id=1090120705]
-layout_mode = 0
-offset_left = 518.0
-offset_top = 124.0
-offset_right = 639.0
-offset_bottom = 155.0
-text = "🔊 Sound : ON"
-
-[node name="MusicButton" type="Button" parent="." unique_id=1401248342]
-layout_mode = 0
-offset_left = 521.0
-offset_top = 207.0
-offset_right = 638.0
-offset_bottom = 238.0
-text = "🎵 Music : ON"
-
 [node name="VersionLabel" type="Label" parent="." unique_id=1400602403]
 layout_mode = 1
-anchors_preset = 2
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 536.0
-offset_top = -247.0
-offset_right = 632.0
-offset_bottom = -221.0
+offset_left = -51.0
+offset_top = -166.0
+offset_right = 52.0
+offset_bottom = -143.0
+grow_horizontal = 2
 grow_vertical = 0
 text = "Version 1.0"
 label_settings = SubResource("LabelSettings_mjvk5")
 
-[node name="BackButton" type="Button" parent="." unique_id=743484481]
-layout_mode = 0
-offset_left = 546.0
-offset_top = 302.0
-offset_right = 614.0
-offset_bottom = 333.0
+[node name="SettingsButtons" type="VBoxContainer" parent="." unique_id=368233973]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.5
+offset_top = -170.0
+offset_right = 111.5
+offset_bottom = 104.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 22
+
+[node name="SoundButton" type="Button" parent="SettingsButtons" unique_id=1090120705]
+layout_mode = 2
+theme = ExtResource("4_w1nw0")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_yrknh")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_vb1ha")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_df05h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ghw46")
+text = "🔊 Sound : ON"
+
+[node name="MusicButton" type="Button" parent="SettingsButtons" unique_id=1401248342]
+layout_mode = 2
+theme = ExtResource("4_w1nw0")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_yrknh")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_vb1ha")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_df05h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ghw46")
+text = "🎵 Music : ON"
+
+[node name="BackButton" type="Button" parent="SettingsButtons" unique_id=743484481]
+layout_mode = 2
+theme = ExtResource("4_w1nw0")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_yrknh")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_vb1ha")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_df05h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ghw46")
 text = "← BACK"

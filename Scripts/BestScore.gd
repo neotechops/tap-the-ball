@@ -4,7 +4,7 @@ extends Control
 @onready var back_button = $BackButton
 
 func _ready():
-	load_high_score()
+	high_score_label.text = "High Score: " + str(GameSettings.high_score)
 	back_button.pressed.connect(_on_back_pressed)
 
 func load_high_score():
@@ -15,7 +15,8 @@ func load_high_score():
 		high_score = file.get_32()
 		file.close()
 
-	high_score_label.text = "High Score: " + str(high_score)
+	high_score_label.text = "High Score: " + str(GameSettings.high_score)
 
 func _on_back_pressed():
+	AudioManager.play_button_click()
 	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")

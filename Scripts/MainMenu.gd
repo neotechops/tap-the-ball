@@ -10,10 +10,17 @@ func _ready():
 	settings_button.pressed.connect(_on_settings_pressed)
 
 func _on_play_pressed():
+	AudioManager.play_button_click()
 	get_tree().change_scene_to_file("res://Scenes/Main.tscn")
 
 func _on_best_score_pressed():
+	AudioManager.play_button_click()
 	get_tree().change_scene_to_file("res://Scenes/BestScore.tscn")
 
 func _on_settings_pressed():
+	AudioManager.play_button_click()
 	get_tree().change_scene_to_file("res://Scenes/Settings.tscn")
+	
+func _on_exit_button_pressed():
+	AudioManager.play_button_click()
+	get_tree().quit()	

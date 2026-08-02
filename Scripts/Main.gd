@@ -2,8 +2,8 @@ extends Node2D
 
 var score = 0
 var time_left = 30
-var high_score = 0
 var is_paused = false
+var new_high_score_celebrated = false
 
 @onready var high_score_label = $HighScoreLabel
 @onready var restart_button = $RestartButton
@@ -18,14 +18,15 @@ var is_paused = false
 @onready var main_menu_button = $PausePanel/ButtonContainer/MainMenuButton
 
 func _ready():
+	GameSettings.reset_high_score() # Uncomment the line only when testing as it is added to reset score to test.
 	ball.ball_clicked.connect(_on_ball_clicked)
 	
 	pause_button.pressed.connect(_on_pause_pressed)
 	resume_button.pressed.connect(_on_resume_pressed)
 	pause_restart_button.pressed.connect(_on_pause_restart_pressed)
 	main_menu_button.pressed.connect(_on_main_menu_pressed)
-	load_high_score()
-
+	high_score_label.text = "High Score: " + str(GameSettings.high_score)
+	
 func _process(_delta):
 	if game_timer.time_left > 0:
 		timer_label.text = "Time: " + str(ceil(game_timer.time_left))
@@ -35,12 +36,18 @@ func _on_ball_clicked():
 		score += 1
 		score_label.text = "Score: " + str(score)
 		
-	if score > high_score:
-			high_score = score
-			high_score_label.text = "High Score: " + str(high_score)
-			save_high_score()	
+	if score > GameSettings.high_score:
+
+		if !new_high_score_celebrated:
+			AudioManager.play_success()
+			new_high_score_celebrated = true
+
+		GameSettings.high_score = score
+		high_score_label.text = "High Score: " + str(GameSettings.high_score)
+		GameSettings.save_high_score()
 
 func _on_game_timer_timeout():
+	AudioManager.play_game_over()
 	ball.game_over = true
 	ball.set_process(false)
 
@@ -50,22 +57,11 @@ func _on_game_timer_timeout():
 
 
 func _on_restart_button_pressed():
+	AudioManager.play_button_click()
 	get_tree().reload_current_scene()
 	
-func load_high_score():
-	if FileAccess.file_exists("user://highscore.save"):
-		var file = FileAccess.open("user://highscore.save", FileAccess.READ)
-		high_score = file.get_32()
-		file.close()
-
-	high_score_label.text = "High Score: " + str(high_score)	
-
-func save_high_score():
-	var file = FileAccess.open("user://highscore.save", FileAccess.WRITE)
-	file.store_32(high_score)
-	file.close()
-
 func _on_pause_pressed():
+	AudioManager.play_button_click()
 	is_paused = true
 
 	pause_panel.visible = true
@@ -73,6 +69,7 @@ func _on_pause_pressed():
 
 
 func _on_resume_pressed():
+	AudioManager.play_button_click()
 	is_paused = false
 
 	pause_panel.visible = false
@@ -80,10 +77,12 @@ func _on_resume_pressed():
 
 
 func _on_pause_restart_pressed():
+	AudioManager.play_button_click()
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 
 
 func _on_main_menu_pressed():
+	AudioManager.play_button_click()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
