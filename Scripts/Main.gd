@@ -5,20 +5,20 @@ var time_left = 30
 var is_paused = false
 var new_high_score_celebrated = false
 
-@onready var high_score_label = $HighScoreLabel
-@onready var restart_button = $RestartButton
-@onready var score_label = $ScoreLabel
-@onready var timer_label = $TimerLabel
+@onready var high_score_label = $UI/RootUI/HighScoreLabel
+@onready var restart_button = $UI/RootUI/RestartButton
+@onready var score_label = $UI/RootUI/ScoreLabel
+@onready var timer_label = $UI/RootUI/TimerLabel
 @onready var ball = $Ball
 @onready var game_timer = $GameTimer
-@onready var pause_button = $PauseButton
-@onready var pause_panel = $PausePanel
-@onready var resume_button = $PausePanel/ButtonContainer/ResumeButton
-@onready var pause_restart_button = $PausePanel/ButtonContainer/RestartButton
-@onready var main_menu_button = $PausePanel/ButtonContainer/MainMenuButton
+@onready var pause_button = $UI/RootUI/PauseButton
+@onready var pause_panel = $UI/RootUI/PausePanel
+@onready var resume_button = $UI/RootUI/PausePanel/ButtonContainer/ResumeButton
+@onready var pause_restart_button = $UI/RootUI/PausePanel/ButtonContainer/RestartButton
+@onready var main_menu_button = $UI/RootUI/PausePanel/ButtonContainer/MainMenuButton
 
 func _ready():
-	GameSettings.reset_high_score() # Uncomment the line only when testing as it is added to reset score to test.
+	#GameSettings.reset_high_score() # Uncomment the line only when testing as it is added to reset score to test.
 	ball.ball_clicked.connect(_on_ball_clicked)
 	
 	pause_button.pressed.connect(_on_pause_pressed)

@@ -5,11 +5,6 @@
 [ext_resource type="Theme" uid="uid://cndttn6whic33" path="res://Assests/Themes/MainMenuTheme.tres" id="3_8saeu"]
 [ext_resource type="FontFile" uid="uid://cdsgy0twi7xee" path="res://Assests/Fonts/Montserrat-ExtraBold.ttf" id="3_ghw46"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_bnhvo"]
-font = ExtResource("3_ghw46")
-font_size = 24
-font_color = Color(0.984716, 0.9849116, 0.995617, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vb1ha"]
 content_margin_left = 20.0
 content_margin_top = 12.0
@@ -87,15 +82,16 @@ text = "TAP THE BALL"
 horizontal_alignment = 1
 
 [node name="Subtitle" type="Label" parent="." unique_id=589766002]
-layout_mode = 0
-offset_left = 444.0
-offset_top = 146.0
-offset_right = 725.0
-offset_bottom = 180.0
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 142.0
+offset_bottom = 168.0
+grow_horizontal = 2
 theme_override_fonts/font = ExtResource("3_ghw46")
 theme_override_font_sizes/font_size = 20
 text = "Catch it before it's gone!"
-label_settings = SubResource("LabelSettings_bnhvo")
+horizontal_alignment = 1
 
 [node name="MenuButtons" type="VBoxContainer" parent="." unique_id=1839985007]
 layout_mode = 1

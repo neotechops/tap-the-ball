@@ -34,8 +34,10 @@ func _process(delta):
 		position.y = half_height
 		speed.y *= -1
 
-	if position.y > screen_size.y - half_height:
-		position.y = screen_size.y - half_height
+	var bottom_offset = 8
+
+	if position.y > screen_size.y - half_height + bottom_offset:
+		position.y = screen_size.y - half_height + bottom_offset
 		speed.y *= -1
 
 
@@ -49,23 +51,12 @@ func _input_event(_viewport, event, _shape_idx):
 		ball_clicked.emit()
 		move_to_random_position()
 
-		var screen_size = get_viewport_rect().size
 
-		position.x = randf_range(
-			sprite.texture.get_width() * sprite.scale.x / 2,
-			screen_size.x - sprite.texture.get_width() * sprite.scale.x / 2
-		)
-
-		position.y = randf_range(
-			sprite.texture.get_height() * sprite.scale.y / 2,
-			screen_size.y - sprite.texture.get_height() * sprite.scale.y / 2
-		)
-		
 func move_to_random_position():
 	var screen_size = get_viewport_rect().size
-			
+
 	var half_width = sprite.texture.get_width() * sprite.scale.x / 2
 	var half_height = sprite.texture.get_height() * sprite.scale.y / 2
-			
+
 	position.x = randf_range(half_width, screen_size.x - half_width)
 	position.y = randf_range(half_height, screen_size.y - half_height)
