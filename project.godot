@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="TapTheBall"
+config/name="TapBallRush"
 config/description="Tap the moving ball and beat your best score before time runs out!"
 config/version="1.0"
 run/main_scene="uid://cgeuvi0k6qlte"
