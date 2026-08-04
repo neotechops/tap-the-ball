@@ -37,7 +37,7 @@ func _ready():
 
 	music_player.stream = preload("res://Assests/Audio/Music/background_music.ogg")
 	music_player.bus = "Master"
-	music_player.volume_db = -12
+	music_player.volume_db = -4
 	music_player.finished.connect(_on_music_finished)
 
 	if GameSettings.music_enabled and !music_player.playing:
